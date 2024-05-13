@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 .spell-listing-filters {
@@ -40,7 +41,7 @@
 .spell-card-container {
   padding: 10px 20px;
   background-color: rgb(255, 255, 250);
-  border: 1px solid #E1C16E;
+  border: 1.5px solid #4B0082;
 }
 
 .spell-card-info-grid {

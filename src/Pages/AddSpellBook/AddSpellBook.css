@@ -1,0 +1,26 @@
+.add-book-main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+
+  width: 100%;
+}
+
+.add-book {
+  background-color: rgb(255, 255, 250);
+  border: 1.5px solid #4B0082;
+  height: 500px;
+  width: 400px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-add-book {
+  font-size: 30px;
+  cursor: pointer;
+}
+ 
