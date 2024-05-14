@@ -68,13 +68,13 @@ function App() {
   const navigate = useNavigate();
 
   const addSpellbook = (spellbook) => {
-    if(createdSpellbooks.length === 0) {
-      setCreatedSpellbooks([spellbook])
+    if (createdSpellbooks.length === 0) {
+      setCreatedSpellbooks([spellbook]);
+    } else {
+      setCreatedSpellbooks((prevSpellbooks) => [...prevSpellbooks, spellbook]);
     }
-    else {
-      setCreatedSpellbooks((prevSpellbooks) => {[...prevSpellbooks, spellbook]});
-    }
-    navigate('/spellbook-list')
+    console.log("Spellbook added:", spellbook);
+    navigate('/spellbook-list');
   }
 
   return (
