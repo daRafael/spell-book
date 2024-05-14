@@ -10,7 +10,7 @@ import axios from 'axios';
 const spellsAPI = 'https://www.dnd5eapi.co/api/spells'
 
 //router
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 
 //components
 import Navbar from './components/Navbar/Navbar';
@@ -26,15 +26,10 @@ import AddSpellBook from './Pages/AddSpellBook/AddSpellBook';
 
 
 function App() {
-  //sidebar
-  const [ showSidebar, setShowSidebar ] = useState(false);
-
-
   //spells state
   const [ spells, setSpells ] = useState([]);
   //all spells info
   const [ completeSpells, setCompleteSpells ] = useState([]);
-
 
   const getAllSpells = async () => {
     return axios
@@ -66,6 +61,21 @@ function App() {
     }
   }, [spells]);
 
+  //sidebar
+  const [ showSidebar, setShowSidebar ] = useState(false);
+  //created spellbooks
+  const [ createdSpellbooks, setCreatedSpellbooks ] = useState([]);
+  const navigate = useNavigate();
+
+  const addSpellbook = (spellbook) => {
+    if(createdSpellbooks.length === 0) {
+      setCreatedSpellbooks([spellbook])
+    }
+    else {
+      setCreatedSpellbooks((prevSpellbooks) => {[...prevSpellbooks, spellbook]});
+    }
+    navigate('/spellbook-list')
+  }
 
   return (
     <div className='app'>
@@ -75,8 +85,23 @@ function App() {
         <Routes>
           <Route path='/' element={<HomePage/>} />
           <Route path='/spell-list' element={<SpellList spells={completeSpells} />} />
-          <Route path='/spellbook-list' element={<SpellBookList/>} />
-          <Route path='/add-spellbook' element={<AddSpellBook />} />
+          <Route 
+            path='/spellbook-list' 
+            element={
+              <SpellBookList
+                createdSpellbooks={createdSpellbooks}
+              />
+            } 
+          />
+          <Route 
+            path='/add-spellbook' 
+            element={
+              <AddSpellBook
+                addSpellbook={addSpellbook} 
+                spells={completeSpells} 
+              />
+            } 
+          />
         </Routes>
       </div>
       <Footer />

@@ -1,0 +1,31 @@
+.spellbook-list-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+}
+
+.spellbook-list-spell-book {
+  background-color: #4B0082;
+  height: 500px;
+  width: 400px;
+
+  cursor: pointer;
+}
+
+.spell-book-inspect-container {
+  background-color: white;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 50;
+
+  transition: transform 1s;
+
+  transform: translateY(0%)
+}
+
+.hide-spell-book-inspect-container {
+  transform: translateY(100%)
+}

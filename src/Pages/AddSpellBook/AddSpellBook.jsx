@@ -5,7 +5,7 @@ import { useState } from 'react'
 //components
 import CreateSpellbook from '../../components/CreateSpellbook/CreateSpellbook';
 
-export default function AddSpellBook () {
+export default function AddSpellBook ({ addSpellbook, spells }) {
   const [ showCreateSpellbook, setShowCreateSpellbook] = useState(false);
 
   
@@ -18,7 +18,8 @@ export default function AddSpellBook () {
       <div className='add-book-container'>
         <div className='add-book'>
           <div 
-            onClick={() => {setShowCreateSpellbook(!showCreateSpellbook)}}    className='btn-add-book'
+            onClick={() => {setShowCreateSpellbook(!showCreateSpellbook)}}    
+            className='btn-add-book'
           >
             +
           </div>
@@ -26,7 +27,12 @@ export default function AddSpellBook () {
       </div>
     </div>
     
-    <CreateSpellbook showCreateSpellbook={showCreateSpellbook} /> 
+    <CreateSpellbook
+      addSpellbook={addSpellbook}
+      setShowCreateSpellbook={setShowCreateSpellbook} 
+      showCreateSpellbook={showCreateSpellbook} 
+      spells={spells} 
+    /> 
 
     </>
   )
