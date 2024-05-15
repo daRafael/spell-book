@@ -1,5 +1,5 @@
 .sidebar {
-  z-index: 100;
+  z-index: 1000;
   background-color:  rgb(20, 20, 20);
   color: white;
   font-size: 15px;

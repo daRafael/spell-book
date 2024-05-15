@@ -28,7 +28,7 @@ export default function CreateSpellbook({ createdSpellbooks, addSpellbook, setSh
   }
 
   return (
-    <div className={showCreateSpellbook ? 'create-book-main-container' : 'create-book-main-container hide-create-book-main-container'}>
+    <>
       <div className='create-book-filters-container'>
         <div onClick={() => { setShowCreateSpellbook(!showCreateSpellbook) }} className='create-book-back-btn'>back</div>
         <div className='create-book-input-filters-container'>filters</div>
@@ -56,7 +56,6 @@ export default function CreateSpellbook({ createdSpellbooks, addSpellbook, setSh
       </div>
       <div className='create-book-selected-spells-container'>
         <div className='all-lvl-slots-container'>
-
           {spellbook.pages && Object.values(spellbook.pages).map((spellpage) => (
             <div key={spellpage.level} className='lvl-slots-container'>
               <div className='lvl-title'>{spellpage.level}</div>
@@ -72,6 +71,6 @@ export default function CreateSpellbook({ createdSpellbooks, addSpellbook, setSh
           <button onClick={() => { addSpellbook(spellbook) }}>Create Spellbook</button>
         </div>
       </div>
-    </div>
+    </>
   );
 }

@@ -89,6 +89,7 @@ function App() {
             path='/spellbook-list' 
             element={
               <SpellBookList
+                spells={completeSpells}
                 setCreatedSpellbooks={setCreatedSpellbooks}
                 createdSpellbooks={createdSpellbooks}
               />

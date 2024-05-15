@@ -26,15 +26,15 @@ export default function AddSpellBook ({ createdSpellbooks, addSpellbook, spells 
         </div>
       </div>
     </div>
-    
-    <CreateSpellbook
-      addSpellbook={addSpellbook}
-      createdSpellbooks={createdSpellbooks}
-      setShowCreateSpellbook={setShowCreateSpellbook} 
-      showCreateSpellbook={showCreateSpellbook} 
-      spells={spells} 
-    /> 
-
+    <div className={showCreateSpellbook ? 'create-book-main-container' : 'create-book-main-container hide-create-book-main-container'}>
+      <CreateSpellbook
+        addSpellbook={addSpellbook}
+        createdSpellbooks={createdSpellbooks}
+        setShowCreateSpellbook={setShowCreateSpellbook} 
+        showCreateSpellbook={showCreateSpellbook} 
+        spells={spells} 
+      /> 
+    </div>
     </>
   )
 }

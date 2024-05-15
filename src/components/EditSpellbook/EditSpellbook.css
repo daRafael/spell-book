@@ -1,0 +1,14 @@
+.edit-book-filters-book-container {
+  display: flex;
+
+}
+
+.edit-book-filters-container {
+  width: 500px;
+  height: 600px;
+  overflow: auto;
+}
+
+.edit-book-selected-spells-container {
+  width: 500px;
+}

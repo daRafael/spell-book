@@ -1,7 +1,8 @@
 import './EditSpellbook.css'
 
-export default function EditSpellbook({ setShowEditPage, showEditPage, spellbooks }) {
-  console.log(spellbooks)
+export default function EditSpellbook({ listOfSpells, setShowEditPage, showEditPage, spellbook }) {
+  console.log(spellbook)
+  
   return (
     <>
       <div>
@@ -14,14 +15,13 @@ export default function EditSpellbook({ setShowEditPage, showEditPage, spellbook
             back
           </button>
         </div>
-{/*         <div>
-          <div className='create-book-filters-container'>
-            <div onClick={() => { setShowCreateSpellbook(!showCreateSpellbook) }} className='create-book-back-btn'>back</div>
-            <div className='create-book-input-filters-container'>filters</div>
+        <div className='edit-book-filters-book-container'>
+          <div className='edit-book-filters-container'>
+            <div className='edit-book-input-filters-container'>filters</div>
             <div className='create-book-spell-list-container'>
               <div className='create-book-info-indicators'>info indicators</div>
               <div className='create-book-spell-list'>
-                {spells.map((spell) => (
+                {listOfSpells.map((spell) => (
                   <div key={spell.index} className='create-book-spell-card-container'>
                     <div className='create-book-spell-card-info-grid'>
                       <div className='create-book-spell-level-container'>{spell.level === 0 ? 'cantrip' : spell.level}</div>
@@ -40,9 +40,9 @@ export default function EditSpellbook({ setShowEditPage, showEditPage, spellbook
               </div>
             </div>
           </div>
-          <div className='create-book-selected-spells-container'>
+          <div className='edit-book-selected-spells-container'>
             <div className='all-lvl-slots-container'>
-              {spellbooks && spellbooks.map((spellpage) => (
+              {spellbook.pages && Object.values(spellbook.pages).map((spellpage) => (
                 <div key={spellpage.level} className='lvl-slots-container'>
                   <div className='lvl-title'>{spellpage.level}</div>
                   <div className='lvl-slots'>
@@ -57,7 +57,7 @@ export default function EditSpellbook({ setShowEditPage, showEditPage, spellbook
               <button>Complete</button>
             </div>
           </div>
-        </div> */}
+        </div>
       </div>
     </>
   )

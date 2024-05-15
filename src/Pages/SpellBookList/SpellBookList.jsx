@@ -6,7 +6,7 @@ import SpellbookInspect from '../../components/SpellbookInspect/SpellbookInspect
 import EditSpellbook from '../../components/EditSpellbook/EditSpellbook';
 
 
-export default function SpellBookList ({ setCreatedSpellbooks, createdSpellbooks }) {
+export default function SpellBookList ({ setCreatedSpellbooks, createdSpellbooks, spells }) {
   //inspect individual books
   const [ selectedBookId, setSelectedBookId ] = useState(null);
   const [ showInspect, setShowInspect ] = useState(false);
@@ -27,32 +27,44 @@ export default function SpellBookList ({ setCreatedSpellbooks, createdSpellbooks
         { createdSpellbooks.length > 0 ? (
             createdSpellbooks.map((createdSpellbook) => {
               return(
-                <div
-                  key={createdSpellbook.id}
-                  className='spellbook-list-spell-book'
-                >
+                <>
                   <div
-                    onClick={() => {deleteSpellbook(createdSpellbook.id)}} 
-                    className='spellbook-list-delete-btn'
+                    key={createdSpellbook.id}
+                    className='spellbook-list-spell-book'
                   >
-                    <button>X</button>
-                  </div>
-                  <div>
-                    <button
-                      onClick={() => {
-                        setShowInspect(!showInspect)
-                        setSelectedBookId(createdSpellbook.id)
-                      }}  
+                    <div
+                      onClick={() => {deleteSpellbook(createdSpellbook.id)}} 
+                      className='spellbook-list-delete-btn'
                     >
-                      Inspect
-                    </button>
+                      <button>X</button>
+                    </div>
+                    <div>
+                      <button
+                        onClick={() => {
+                          setShowInspect(!showInspect)
+                          setSelectedBookId(createdSpellbook.id)
+                        }}  
+                      >
+                        Inspect
+                      </button>
+                    </div>
+                    <div 
+                      className={selectedBookId === createdSpellbook.id && showInspect ? 'spell-book-inspect-container' : 'spell-book-inspect-container hide-spell-book-inspect-container'}
+                    >
+                      <SpellbookInspect setShowEditPage={setShowEditPage} showEditPage={showEditPage} spellbook={createdSpellbook} />
+                    </div>
                   </div>
                   <div 
-                    className={selectedBookId === createdSpellbook.id && showInspect ? 'spell-book-inspect-container' : 'spell-book-inspect-container hide-spell-book-inspect-container'}
+                    className={ showEditPage ? 'edit-spell-book-main-container' : 'edit-spell-book-main-container hide-spell-book-inspect-container'}
                   >
-                    <SpellbookInspect setShowEditPage={setShowEditPage} showEditPage={showEditPage} spellbook={createdSpellbook} />
+                    <EditSpellbook
+                      listOfSpells={spells}
+                      setShowEditPage={setShowEditPage} 
+                      showEditPage={showEditPage} 
+                      spellbook={createdSpellbook} 
+                    />
                   </div>
-                </div>
+                </>
               )
               
             })
@@ -64,12 +76,6 @@ export default function SpellBookList ({ setCreatedSpellbooks, createdSpellbooks
             </div>
           )
         }
-      </div>
-
-      <div 
-        className={ showEditPage ? 'edit-spell-book-main-container' : 'edit-spell-book-main-container hide-spell-book-inspect-container'}
-      >
-        <EditSpellbook setShowEditPage={setShowEditPage} showEditPage={showEditPage} spellbooks={createdSpellbooks}/>
       </div>
     </>
   )
