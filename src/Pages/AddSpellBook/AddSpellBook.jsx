@@ -5,7 +5,7 @@ import { useState } from 'react'
 //components
 import CreateSpellbook from '../../components/CreateSpellbook/CreateSpellbook';
 
-export default function AddSpellBook ({ addSpellbook, spells }) {
+export default function AddSpellBook ({ createdSpellbooks, addSpellbook, spells }) {
   const [ showCreateSpellbook, setShowCreateSpellbook] = useState(false);
 
   
@@ -29,6 +29,7 @@ export default function AddSpellBook ({ addSpellbook, spells }) {
     
     <CreateSpellbook
       addSpellbook={addSpellbook}
+      createdSpellbooks={createdSpellbooks}
       setShowCreateSpellbook={setShowCreateSpellbook} 
       showCreateSpellbook={showCreateSpellbook} 
       spells={spells} 

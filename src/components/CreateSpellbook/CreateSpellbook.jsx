@@ -1,20 +1,23 @@
 import './CreateSpellbook.css';
 import { useState, useEffect } from 'react';
 
-export default function CreateSpellbook({ addSpellbook, setShowCreateSpellbook, showCreateSpellbook, spells }) {
+export default function CreateSpellbook({ createdSpellbooks, addSpellbook, setShowCreateSpellbook, showCreateSpellbook, spells }) {
   const [selectedSpells, setSelectedSpells] = useState([]);
   const [spellbook, setSpellbook] = useState({});
 
   useEffect(() => {
-    const updatedSpellbook = {};
+    const updatedSpellbook = {
+      id: createdSpellbooks ? createdSpellbooks.length + 1 : 1,
+      pages: {}
+    };
     for (let i = 0; i <= 9; i++) {
-      updatedSpellbook[`lvl${i}`] = {
+      updatedSpellbook.pages[`lvl${i}`] = {
         level: i === 0 ? 'Cantrips' : `Level ${i}`,
         spells: selectedSpells.filter(spell => spell.level === i)
       };
     }
     setSpellbook(updatedSpellbook);
-  }, [selectedSpells]);
+  }, [selectedSpells, createdSpellbooks]);
 
   const addSelectedSpell = (spell) => {
     if (selectedSpells.some(listedSpell => listedSpell.index === spell.index)) {
@@ -53,7 +56,8 @@ export default function CreateSpellbook({ addSpellbook, setShowCreateSpellbook, 
       </div>
       <div className='create-book-selected-spells-container'>
         <div className='all-lvl-slots-container'>
-          {Object.values(spellbook).map((spellpage) => (
+
+          {spellbook.pages && Object.values(spellbook.pages).map((spellpage) => (
             <div key={spellpage.level} className='lvl-slots-container'>
               <div className='lvl-title'>{spellpage.level}</div>
               <div className='lvl-slots'>

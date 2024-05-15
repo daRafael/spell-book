@@ -13,9 +13,10 @@
 }
 
 .spellbook-list-spell-book {
+  overflow: hidden;
   background-color: #4B0082;
   height: 500px;
-  width: 300px; /* Adjust based on your design */
+  width: 400px; /* Adjust based on your design */
   margin: 0 10px; /* Add space between each spell book */
   flex-shrink: 0; /* Ensure books maintain their width */
   cursor: pointer;
@@ -37,7 +38,7 @@
 }
 
 .spell-book-inspect-container {
-  background-color: white;
+  background-color: #4B0082;
   position: fixed;
   height: 100%;
   width: 100%;
@@ -50,4 +51,13 @@
 
 .hide-spell-book-inspect-container {
   transform: translateY(100%)
+}
+
+.edit-spell-book-main-container{
+  background-color: white;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  background-color: white;
 }

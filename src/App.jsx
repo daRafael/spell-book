@@ -89,6 +89,7 @@ function App() {
             path='/spellbook-list' 
             element={
               <SpellBookList
+                setCreatedSpellbooks={setCreatedSpellbooks}
                 createdSpellbooks={createdSpellbooks}
               />
             } 
@@ -97,6 +98,7 @@ function App() {
             path='/add-spellbook' 
             element={
               <AddSpellBook
+                createdSpellbooks={createdSpellbooks}
                 addSpellbook={addSpellbook} 
                 spells={completeSpells} 
               />

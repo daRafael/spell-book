@@ -1,0 +1,5 @@
+.book-inspect-book-spells-container {
+  height: 500px;
+  width: 400px;
+  overflow: auto;
+}
