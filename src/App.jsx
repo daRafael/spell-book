@@ -73,8 +73,16 @@ function App() {
     } else {
       setCreatedSpellbooks((prevSpellbooks) => [...prevSpellbooks, spellbook]);
     }
-    console.log("Spellbook added:", spellbook);
     navigate('/spellbook-list');
+  }
+
+  const updateSpellbook = (updatedSpellbook) => {
+    const bookToUpdate = createdSpellbooks.findIndex(spellbook => spellbook.id === updatedSpellbook.id);
+
+    const updatedSpellbooks = [...createdSpellbooks];
+    updatedSpellbooks[bookToUpdate] = updatedSpellbook;
+
+    setCreatedSpellbooks(updatedSpellbooks)
   }
 
   return (
@@ -92,6 +100,7 @@ function App() {
                 spells={completeSpells}
                 setCreatedSpellbooks={setCreatedSpellbooks}
                 createdSpellbooks={createdSpellbooks}
+                updateSpellbook={updateSpellbook}
               />
             } 
           />

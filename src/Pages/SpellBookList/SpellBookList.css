@@ -1,65 +1,47 @@
 .spellbook-list-container {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow-x: auto; /* Enable horizontal scrolling */
-  width: 100%;
-  margin: 0 auto; /* Center the container */
-}
-
-.spellbook-list {
-  display: flex;
-  padding: 0 20px; /* Add padding to accommodate margins */
+  gap: 50px;
 }
 
 .spellbook-list-spell-book {
-  overflow: hidden;
+  position: relative;
   background-color: #4B0082;
   height: 500px;
-  width: 400px; /* Adjust based on your design */
-  margin: 0 10px; /* Add space between each spell book */
-  flex-shrink: 0; /* Ensure books maintain their width */
+  width: 400px;
+  overflow: hidden; 
+}
+
+.spellbook-list-delete-btn {
+  position: absolute;
+  z-index: 60;
   cursor: pointer;
-  transition: transform 0.3s ease; /* Smooth transition on hover */
 }
 
-/* Larger size for the middle spell book */
-.spellbook-list-spell-book:nth-child(2) {
-  transform: scale(1.2); /* Larger size */
-}
-
-/* Smaller size for books not in the middle */
-.spellbook-list-spell-book:not(:nth-child(2)) {
-  transform: scale(0.9); /* Smaller size */
-}
-
-.spellbook-list-spell-book:hover {
-  transform: scale(1.1); /* Scale up on hover */
+.spellbook-list-inspect-btn {
+  position: absolute;
+  bottom: 0;
+  left: 170px;
+  z-index: 60;
+  cursor: pointer;
 }
 
 .spell-book-inspect-container {
-  background-color: #4B0082;
-  position: fixed;
-  height: 100%;
-  width: 100%;
+  position: absolute; 
+  top: 0; 
+  left: 0;
+  height: 500px;
+  width: 400px;
   z-index: 50;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
   transition: transform 1s;
-
-  transform: translateY(0%)
+  transform: translateY(0%);
 }
 
 .hide-spell-book-inspect-container {
-  transform: translateY(100%)
-}
-
-.edit-spell-book-main-container{
-  background-color: white;
-  position: fixed;
-  top: 80px;
-  
-  height: 100%;
-  width: 100%;
-  z-index: 100;
-  background-color: white;
+  transform: translateY(100%);
 }

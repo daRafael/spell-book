@@ -1,5 +1,39 @@
+.book-inspect-container-main {
+  position: relative;
+  width: 90%;
+  height: 90%;
+  background-color: beige;
+}
+
+.book-inspect-edit-btn {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  cursor: pointer;
+}
+
 .book-inspect-book-spells-container {
-  height: 500px;
-  width: 400px;
+  width: 100%;
+  height: 100%;
   overflow: auto;
+  scrollbar-width: none;
+}
+
+.book-inspect-lvl-spells-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 40px
+}
+
+.book-inspect-lvl-title {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.book-inspect-spell-slot {
+  font-family: "Tangerine", cursive;
+  font-size: 30px;
+  font-weight: bold;
 }
