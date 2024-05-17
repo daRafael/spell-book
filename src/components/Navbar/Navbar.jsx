@@ -7,7 +7,7 @@ export default function Navbar ({ showSidebar, setShowSidebar}) {
         <img
           onClick={() => {setShowSidebar(!showSidebar)}}
           className='ham-menu-icon' 
-          src="public\img\ham-menu-icon.png" 
+          src="/public/img/ham-menu-icon.png" 
           alt="ham-menu" 
         />
       </div>
