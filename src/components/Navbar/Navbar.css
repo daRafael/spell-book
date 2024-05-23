@@ -6,10 +6,15 @@
   height: 80px;
 }
 
-.navbar-container {
-  position: relative;
+.spellbook-logo-container {
+  display: flex;
+  align-items: center;
   height: 100%;
-  width: 100%;
+  margin-left: 20px;
+}
+
+.spellbook-logo {
+  height: 70px;
 }
 
 .ham-menu-icon {
