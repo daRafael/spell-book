@@ -5,7 +5,17 @@
   align-items: center;
   gap: 15px;
 
+  background-image: url('/public/img/paper-background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
   width: 100%;
+}
+
+.add-book-title {
+  font-family: "TiamatCondensedSC", Arial, Helvetica, sans-serif;
+  font-size: 30px;
 }
 
 .add-book {

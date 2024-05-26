@@ -6,22 +6,22 @@ export default function Sidebar ({ showSidebar }) {
     <div className={showSidebar ? "sidebar" : " sidebar hide-sidebar"}>
       <Link to='/' className='sidebar-links'>
         <div className='sidebar-pages'>
-          HOME
+          Home
         </div>
       </Link>
       <Link to='/spell-list' className='sidebar-links'>
         <div className='sidebar-pages'>
-          ALL SPELLS
+          All Spells
         </div>
       </Link> 
       <Link to='/add-spellbook' className='sidebar-links'>
         <div className='sidebar-pages'>
-          CREATE YOUR SPELLBOOK
+          Create Your Spellbook
         </div>
       </Link>
       <Link to='/spellbook-list' className='sidebar-links'>
         <div className='sidebar-pages'>
-          YOUR SPELLBOOKS
+          Your Spellbooks
         </div>
       </Link>
     </div>

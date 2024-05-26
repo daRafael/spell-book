@@ -1,7 +1,8 @@
 .create-book-main-container {
   position: fixed;
-  top:80px;
+  top: 0px;
   bottom: 20px;
+  margin-top: 80px;
   width: 100%;
   z-index: 100;
   background-color: rgb(255, 255, 246);
@@ -69,7 +70,7 @@
 .create-book-spell-list {
   overflow-y: auto;
   scrollbar-width: none;
-  max-height: calc(100vh - 626px);
+  max-height: calc(100vh - 550px);
   width: 100%;
 }
 
@@ -113,22 +114,19 @@
 }
 
 .create-book-cover {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin: auto;
   background-color: #4B0082;
-  height: 80%;
+  max-height: calc(100vh - 330px);
   width: 80%;
+  padding: 20px;
 }
 
 .create-book-pages {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin: auto;
 
   background-color: beige;
-  height: 96%;
-  width: 95%;
+  height: 100%;
+  width: 100%;
 
   overflow-y: auto;
   scrollbar-width: none;
@@ -139,7 +137,9 @@
   flex-direction: column;
   gap: 10px;
   width: 95%;
+
   margin-bottom: 40px;
+  margin-left: 15px;
 }
 
 .lvl-slots {
