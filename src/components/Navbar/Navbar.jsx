@@ -1,13 +1,16 @@
 import './Navbar.css'
+import { Link } from 'react-router-dom'
 
 export default function Navbar ({ showSidebar, setShowSidebar}) {
   return (
     <div className='navbar'>
       <div className='spellbook-logo-container'>
-        <img
-          className='spellbook-logo'
-          src='/img/spellbook-logo-white.png'
-        />
+        <Link to='/'>
+          <img
+            className='spellbook-logo'
+            src='/img/spellbook-logo-white.png'
+          />
+        </Link>
       </div>
       <div className='hamburger-menu-container'>
         <img
